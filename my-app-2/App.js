@@ -7,6 +7,8 @@ import ListItem1  from './components/ListItem1';
 import ListItem2  from './components/ListItem2';
 import ListItem3  from './components/ListItem3';
 import TextInputButton  from './components/TextInputButton';
+import ReactHookForm  from './components/ReactHookForm';
+
 
 const names = [
   {key: 'Devin'},
@@ -36,6 +38,7 @@ export default function App() {
           <ListItem2></ListItem2>
           <ListItem3></ListItem3>
           <TextInputButton></TextInputButton>
+          <ReactHookForm></ReactHookForm>
         {/* </ScrollView> */}
         
         <StatusBar style="auto" />
