@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 
@@ -7,21 +7,35 @@ import ListItem1  from './components/ListItem1';
 import ListItem2  from './components/ListItem2';
 import ListItem3  from './components/ListItem3';
 import TextInputButton  from './components/TextInputButton';
+import ReactHookForm  from './components/ReactHookForm';
+import EventHandler  from './components/EventHandler';
+import EventHandler1  from './components/EventHandler1';
 
-const names = [
-  {key: 'Devin'},
-  {key: 'Dan'},
-  {key: 'Dominic'},
-  {key: 'Jackson'},
-  {key: 'James'},
-  {key: 'Joel'},
-  {key: 'John'},
-  {key: 'Jillian'},
-  {key: 'Jimmy'},
-  {key: 'Julie'},
-]
 
 export default function App() {
+  const [names, setNames] = useState([
+    {key: 'Devin'},
+    {key: 'Dan'},
+  ]);
+  const NewNameHandler = (newName) => {
+    // names.push(newName)
+    // console.log(names)
+
+    // For the useState to identify that the names has been changed, it is necessary
+    // for the usestate to recognize names to be a complete new variable. So, just push in the 
+    // previous 2 steps is not sufficient. Hence, we are using concat which would replace the 
+    // existing names variable with a updated version of the new allocated variable with the same name
+    
+    // setNames(names.concat(newName))
+    // setNames(() => {
+    //   return names.concat(newName)}
+    // )
+    setNames((names) => {
+      return names.concat(newName)}
+    )
+
+
+  };
   return (
     // <SafeAreaView style={styles.container}>
     <ScrollView>
@@ -36,6 +50,13 @@ export default function App() {
           <ListItem2></ListItem2>
           <ListItem3></ListItem3>
           <TextInputButton></TextInputButton>
+          <ReactHookForm></ReactHookForm>
+          {/* Create a new name calling this EventHandler */}
+          <EventHandler onAddName={NewNameHandler}></EventHandler>
+          {/* Now list the new element added to the list */}
+          <EventHandler1 data={names}></EventHandler1>
+
+
         {/* </ScrollView> */}
         
         <StatusBar style="auto" />
