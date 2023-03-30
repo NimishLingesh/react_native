@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "react-hook-form": "^7.43.5"
+    "react-hook-form": "^7.43.5",
+    "react-native-web": "~0.18.10",
+    "react-dom": "18.2.0",
+    "@expo/webpack-config": "^18.0.1"
   }
 }

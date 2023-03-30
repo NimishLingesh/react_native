@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, Button, View, Text, Alert} from 'react-native';
 import App from './ReactHookForm';
+import { useState } from 'react';
 
 const Separator = () => <View style={styles.separator} />;
 

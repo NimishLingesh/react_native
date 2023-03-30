@@ -10,6 +10,8 @@ import TextInputButton  from './components/TextInputButton';
 import ReactHookForm  from './components/ReactHookForm';
 import EventHandler  from './components/EventHandler';
 import EventHandler1  from './components/EventHandler1';
+import FlexLayout  from './components/FlexLayout';
+
 
 
 export default function App() {
@@ -55,7 +57,7 @@ export default function App() {
           <EventHandler onAddName={NewNameHandler}></EventHandler>
           {/* Now list the new element added to the list */}
           <EventHandler1 data={names}></EventHandler1>
-
+          <FlexLayout></FlexLayout>
 
         {/* </ScrollView> */}
         
