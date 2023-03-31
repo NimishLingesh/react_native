@@ -11,7 +11,7 @@ import ReactHookForm  from './components/ReactHookForm';
 import EventHandler  from './components/EventHandler';
 import EventHandler1  from './components/EventHandler1';
 import FlexLayout  from './components/FlexLayout';
-
+import Goal  from './components/Goal';
 
 
 export default function App() {
@@ -58,7 +58,7 @@ export default function App() {
           {/* Now list the new element added to the list */}
           <EventHandler1 data={names}></EventHandler1>
           <FlexLayout></FlexLayout>
-
+          <Goal></Goal>
         {/* </ScrollView> */}
         
         <StatusBar style="auto" />
