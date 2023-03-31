@@ -12,6 +12,12 @@ const Goal = props => {
     // const [textForFlatList, setTextForFlatList] = useState('')
     const [courseGoals, setCourseGoals] = useState([]);
 
+    function deleteGoalHandler(id) {
+        setCourseGoals(currentCourseGoals => {
+            // filter those elements where the condition is true 
+            return currentCourseGoals.filter((goal) => goal.id != id);
+        });
+    }
     
     function addGoalHandler(enteredGoalText) {
         setCourseGoals((currentCourseGoals) => [
@@ -34,7 +40,7 @@ const Goal = props => {
         <View>
         
         <FlatList data={courseGoals} renderItem={(itemData) => {
-          return <GoalItem text={itemData.item.text} />;
+          return <GoalItem text={itemData.item.text} id={itemData.item.id} onDeleteItem={deleteGoalHandler}/>;
         }}
         keyExtractor={(item, index) => {
           return item.id;
