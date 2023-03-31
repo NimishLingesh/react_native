@@ -11,6 +11,7 @@ const Goal = props => {
     // this is just for the FlatList which uses the object of each of the list items
     // const [textForFlatList, setTextForFlatList] = useState('')
     const [courseGoals, setCourseGoals] = useState([]);
+    const [modalIsVisible, setModalIsVisible] = useState(false);
 
     function deleteGoalHandler(id) {
         setCourseGoals(currentCourseGoals => {
@@ -26,7 +27,16 @@ const Goal = props => {
         ]);
 
         console.log(courseGoals);
+        setModalIsVisible(false)
         // console.log(enteredText)
+    }
+
+    function startAddGoalHandler() {
+        setModalIsVisible(true)
+    }
+
+    function closeAddGoalHandler(){
+        setModalIsVisible(false)
     }
 
   return (
@@ -34,7 +44,10 @@ const Goal = props => {
         <View style={{paddingBottom: 10}}>
         <Text>Components interaction between the parent and the Child</Text>
         </View>
-            <GoalInput onAddGoal={addGoalHandler}></GoalInput>
+
+            <Button title='Add new Goal' color="#5e0acc" 
+                onPress={startAddGoalHandler}/> 
+            {modalIsVisible && <GoalInput visible={modalIsVisible} onAddGoal={addGoalHandler} closeAddGoal={closeAddGoalHandler}></GoalInput>}
 
         {/* wrapping the text within View is not essential. But to make it adjust to differnt Platform like ios we do that here  */}
         <View>
