@@ -1,6 +1,6 @@
 // workiing on the components (movement between the parent and the child copmponent)
 import { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Modal } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Modal, Image } from 'react-native';
 
 function GoalInput(props) {
   const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -21,10 +21,12 @@ function GoalInput(props) {
   return (
     <Modal visible={props.visible} animationType='slide'>
     <View style={styles.inputContainer}>
+      <Image style={styles.image} source={require('../assets/favicon.png')}/>
       <TextInput
         style={styles.textInput}
         placeholder="Your course goal!"
         onChangeText={goalInputHandler}
+        backgroundColor='white'
         value={enteredGoalText}
       />
       <View style={styles.buttonContainer}>
@@ -47,16 +49,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 24,
+    // marginBottom: 24,
     padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#cccccc',
+    backgroundColor: '#311b6b',
+    // borderBottomWidth: 1,
+    // borderBottomColor: '#cccccc',
   },
   textInput: {
     borderWidth: 1,
-    borderColor: '#cccccc',
+    borderColor: '#e4d0ff',
+    backgroundColor: '#e4d0ff',
+    color: '#e4d0ff',
+    borderRadius: 6,
     width: '100%',
     padding: 8,
+    padding: 16,
   },
   buttonContainer: {
     marginTop: 15,
@@ -66,5 +73,10 @@ const styles = StyleSheet.create({
   button: {
     width: '45%',
     marginHorizontal: 8
+  },
+  image: {
+    width: 100,
+    height: 100,
+    margin: 20
   }
 });

@@ -40,6 +40,8 @@ export default function App() {
   };
   return (
     // <SafeAreaView style={styles.container}>
+    <>
+    <StatusBar style='auto' />
     <ScrollView>
       <View style={styles.container}>
         {/* The next line would align the screen without the side gap. This might be a problem 
@@ -64,6 +66,8 @@ export default function App() {
         <StatusBar style="auto" />
       </View>
     </ScrollView>
+    {/* </StatusBar> */}
+    </>
     // </SafeAreaView>
   );
 }
@@ -71,7 +75,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E6E6FA',
     alignItems: 'center',
     justifyContent: 'center',
   },
