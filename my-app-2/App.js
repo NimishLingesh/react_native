@@ -11,7 +11,7 @@ import ReactHookForm  from './components/ReactHookForm';
 import EventHandler  from './components/EventHandler';
 import EventHandler1  from './components/EventHandler1';
 import FlexLayout  from './components/FlexLayout';
-
+import Goal  from './components/Goal';
 
 
 export default function App() {
@@ -40,6 +40,8 @@ export default function App() {
   };
   return (
     // <SafeAreaView style={styles.container}>
+    <>
+    <StatusBar style='auto' />
     <ScrollView>
       <View style={styles.container}>
         {/* The next line would align the screen without the side gap. This might be a problem 
@@ -58,12 +60,14 @@ export default function App() {
           {/* Now list the new element added to the list */}
           <EventHandler1 data={names}></EventHandler1>
           <FlexLayout></FlexLayout>
-
+          <Goal></Goal>
         {/* </ScrollView> */}
         
         <StatusBar style="auto" />
       </View>
     </ScrollView>
+    {/* </StatusBar> */}
+    </>
     // </SafeAreaView>
   );
 }
@@ -71,7 +75,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E6E6FA',
     alignItems: 'center',
     justifyContent: 'center',
   },
