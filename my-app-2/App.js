@@ -47,6 +47,8 @@ export default function App() {
         {/* The next line would align the screen without the side gap. This might be a problem 
         between the scrolling of the inner container and the outer container */}
       {/* <View contentContainerStyle={styles.container}> */}
+        < Text></Text>
+        < Text></Text>
         <Text>Open up App.js to start working on your app!</Text>
         {/* <ScrollView> */}
           <ListItem0 data={names}></ListItem0>
