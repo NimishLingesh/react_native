@@ -49,7 +49,7 @@ const FlexLayout = props => {
             {/* need to define key here to uniquely identify the list  */}
             {textList.map((txt) => (
             <View> 
-              <Text style={styles.txtLst}key={txt}>{txt}</Text>
+              <Text style={styles.txtLst} key={txt}>{txt}</Text>
             </View>
             ))}
         </ScrollView>
